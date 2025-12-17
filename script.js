@@ -62,14 +62,18 @@ fetch(API_URL)
         let avantTitle1 = document.createElement('span');
         let avantTitle2 = document.createElement('h2');
         let avantParagraph = document.createElement('p');
+        let avantdiv_container = document.createElement('div');
 
-        avantTitle1.textContent = '"Pourquoi"';
+        avantTitle1.textContent = 'Pourquoi';
         avantTitle2.textContent = 'Ce qui nous definit';
         avantParagraph.textContent = 'Qualité sans égale dans chaque detail';
+
+        avantdiv_container.className = "avantdiv_conainer";
 
         avantagesContainer.appendChild(avantTitle1);
         avantagesContainer.appendChild(avantTitle2);
         avantagesContainer.appendChild(avantParagraph);
+        avantagesContainer.appendChild(avantdiv_container);
 
         data.avantagesClients.forEach(elementText => {
             let avantageDiv = document.createElement('div');
@@ -79,7 +83,7 @@ fetch(API_URL)
             avantageP.textContent = elementText;
 
             avantageDiv.appendChild(avantageP);
-            avantagesContainer.appendChild(avantageDiv);
+            avantdiv_container.appendChild(avantageDiv);
         });
 
         avantages.innerHTML = '';
@@ -103,7 +107,9 @@ fetch(API_URL)
         // RIP mon innerhtml , on ne va pas t'oublier :(
 
         let produitsContainer = document.createElement('div');
+        let prodcard_container = document.createElement('div');
         produitsContainer.className = 'container';
+        prodcard_container.className = 'prodcard_container';
 
         data.produits.forEach(produit => {
             let card = document.createElement('div');
@@ -113,7 +119,7 @@ fetch(API_URL)
 
             card.className = 'card';
             image.src = produit['image-url'];
-            image.style.maxWidth = '150px';
+            // image.style.maxWidth = '150px';
 
             title.textContent = produit.nom;
             description.textContent = produit.description;
@@ -121,7 +127,8 @@ fetch(API_URL)
             card.appendChild(image);
             card.appendChild(title);
             card.appendChild(description);
-            produitsContainer.appendChild(card);
+            prodcard_container.appendChild(card);
+            produitsContainer.appendChild(prodcard_container);
 
         });
 
