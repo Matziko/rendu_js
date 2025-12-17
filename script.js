@@ -16,7 +16,7 @@ fetch(API_URL)
 
 
         nav.innerHTML = `
-    <h2>Logo</h2>
+    <img src="Media.jpg">
     <ul>
     <li><a href="">Accueil</a></li>
     <li><a href="#Avantages">Avantages</a></li>
@@ -153,25 +153,31 @@ fetch(API_URL)
 
         let servicesContainer = document.createElement('div');
         let servicesTitle = document.createElement('h2');
-
+        let serv = document.createElement('div');
+        
         servicesContainer.className = 'container';
+        serv.className = 'servcontainer';
         servicesTitle.textContent = 'Vos sneakers, votre style';
-        servicesContainer.appendChild(servicesTitle);
-
-
+        
+        
         data.services.forEach(service => {
             let title = document.createElement('h3');
             let description = document.createElement('p');
-
+            
             title.textContent = service.nom;
             description.textContent = service.description;
+            let servcard = document.createElement('div');
+        servcard.className = 'servcard';
 
-            servicesContainer.appendChild(title);
-            servicesContainer.appendChild(description);
+            servcard.appendChild(title);
+            servcard.appendChild(description);
+            serv.appendChild(servcard);
         });
-
+        
         services.innerHTML = '';
+        services.appendChild(servicesTitle);
         services.appendChild(servicesContainer);
+        servicesContainer.appendChild(serv);
 
         //             let temohtml = '';
         //     data.temoignages.forEach(temo => {

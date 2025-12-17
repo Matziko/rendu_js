@@ -1,3 +1,10 @@
+:root{
+    --primary: greenyellow;
+    --secondary:white;
+    --tentinary:black;
+    --primary2: rgb(202, 255, 123);
+}
+
 body {
     font-family: 'ClashDisplay-Variable';
     /* font-variation-settings: wght 700.0; */
@@ -7,9 +14,11 @@ body {
 #nav {
     display: flex;
     padding: 10px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    row-gap: 30px;
     h2 {font-weight: 500;}
+    background-color: var(--tentinary);
 
     ul {
         display: flex;
@@ -20,61 +29,113 @@ body {
         list-style: none;
 
     }
+    li:hover {
+        transform: skew(10deg);
+
+    }
 
     a {
 
         text-decoration: none;
-        color: black;
+        color: var(--secondary);
 
     }
+    a:hover {
+        background-color: var(--primary);
+        color: var(--tentinary);
+        padding: 36px 0;
 
+    }
+    img{
+        max-width: 70px;
+    }
     button {
         border-radius: 0;
-        color: white;
-        background-color: black;
+        color: var(--tentinary);
+        background-color: var(--secondary);
         padding: 10px 20px;
         font-weight: 500;
+        border-style: solid;
+        
+    }
+    button:hover {
+        border-radius: 0;
+        color: var(--tentinary);
+        background-color: var(--primary);
+        padding: 10px 20px;
+        font-weight: 500;
+        border-style: ridge;
+        transform: skew(3deg);
         
     }
 }
 
 #header {
 
-    background-color: rgb(74, 75, 76);
+    background-image: url(MOSHED-2025-12-17-13-46-13.jpg);
+   background-size: cover;
     padding: 100px;
 
     .hero-container {
         max-width: 600px;
         margin: auto;
         text-align: center;
-        color: rgb(255, 255, 255);
+        color: var(--secondary);
 
         h1 {font-weight: 700;
-        font-size: 60px;}
+            color: transparent;
+            font-size: 60px;
+            -webkit-text-stroke: 1px var(--primary);
+            text-shadow: -4px -4px var(--secondary);
+            text-transform: uppercase;
+        }
     }
 
     p {font-weight: 400;}
 
     .button1 {
         border-radius: 0;
-        color: rgb(0, 0, 0);
-        background-color: rgb(255, 255, 255);
+        color: var(--tentinary);
+        background-color: var(--primary);
         padding: 10px 20px;
         border-style: solid;
-        border-color: rgb(255, 255, 255);
+        border-color: var(--primary);
         margin: auto 10px;
     }
 
     .button2 {
         border-radius: 0;
-        color: white;
-        background-color: rgba(0, 0, 0, 0);
+        color: var(--secondary);
+        background-color: var(--tentinary);
         padding: 10px 20px;
         border-width: 2px;
         border-style: solid;
-        border-color: rgb(255, 255, 255);
+        border-color: var(--primary);
         margin: auto 10px;
     }
+    .button1:hover {
+        border-radius: 0;
+        color: var(--tentinary);
+        background-color: var(--primary2);
+        padding: 10px 20px;
+        border-style: solid;
+        border-color: var(--primary2);
+        margin: auto 10px;
+        transform: skew(3deg);
+    }
+
+    .button2:hover {
+        border-radius: 0;
+        color: var(--tentinary);
+        background-color: var(--primary2);
+        padding: 10px 20px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: var(--primary);
+        margin: auto 10px;
+        transform: skew(3deg);
+    }
+    
 }
 
 #Avantages {
@@ -102,14 +163,21 @@ margin: 100px auto;
 
     .avantage-container {
         border-width: 2px;
-        border: dashed;
+        border: solid;
         padding: 12px;
         max-width: 300px;
+        background-color: var(--tentinary);
+        color: var(--secondary);
+        border-color: var(--primary);
+        bord
 
     }
 }
 
 #Produits {
+    background-color: var(--tentinary);
+    padding-top: 50px;
+    padding-bottom: 50px;
     .container {
         max-width: 1100px;
         margin: auto;
@@ -127,24 +195,24 @@ margin: 100px auto;
         flex-direction: column;
         flex-wrap: wrap;
         max-width: 300px;
-        background-color: rgb(223, 223, 223);
+        background-color: var(--primary);
         padding: 10px;
-        color: rgb(2, 71, 8);
+        color: var(--tentinary);
         align-items: center;
 
         /* border-radius: 5px; */
         transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
         box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
-            0 0 0 2px rgb(203, 203, 203),
+            0 0 0 2px var(--primary),
             0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     }
     .card:hover{
-        background-color: rgb(255, 255, 255);
-        color: rgb(18, 137, 28);
+        background-color: var(--secondary);
+        color: var(--tentinary);
 
-        box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
-            0 0 0 2px rgb(140, 176, 147),
+        box-shadow: inset 0 -3em 3em rgba(32, 26, 26, 0.1),
+            0 0 0 2px var(--primary),
             0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
         padding: 11px;
         }
@@ -157,5 +225,31 @@ margin: 100px auto;
     h3 {}
 
     p {}
+}
+#Services {
+margin: 100px auto;
+max-width: 1000px;
+
+h2{
+    text-align: center;
+    font-size: 40px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    
+    }
+    .servcontainer{
+        display: flex;
+        justify-content: space-between;
+        p{
+            
+            max-width: 300px;
+        }
+    }
+    .servcard {
+
+    }
+
 }
 
