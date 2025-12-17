@@ -19,10 +19,10 @@ fetch(API_URL)
     <h2>Logo</h2>
     <ul>
     <li><a href="">Accueil</a></li>
-    <li><a href="">Avantages</a></li>
-    <li><a href="">Produits</a></li>
-    <li><a href="">Services</a></li>
-    <li><a href="">Temoignages</a></li>
+    <li><a href="#Avantages">Avantages</a></li>
+    <li><a href="#Produits">Produits</a></li>
+    <li><a href="#Services">Services</a></li>
+    <li><a href="#Temoignages">Temoignages</a></li>
     </ul>
     <div>
     <button>Appeler</button></div>
