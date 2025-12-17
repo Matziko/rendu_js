@@ -154,26 +154,26 @@ fetch(API_URL)
         let servicesContainer = document.createElement('div');
         let servicesTitle = document.createElement('h2');
         let serv = document.createElement('div');
-        
+
         servicesContainer.className = 'container';
         serv.className = 'servcontainer';
         servicesTitle.textContent = 'Vos sneakers, votre style';
-        
-        
+
+
         data.services.forEach(service => {
             let title = document.createElement('h3');
             let description = document.createElement('p');
-            
+
             title.textContent = service.nom;
             description.textContent = service.description;
             let servcard = document.createElement('div');
-        servcard.className = 'servcard';
+            servcard.className = 'servcard';
 
             servcard.appendChild(title);
             servcard.appendChild(description);
             serv.appendChild(servcard);
         });
-        
+
         services.innerHTML = '';
         services.appendChild(servicesTitle);
         services.appendChild(servicesContainer);
@@ -209,29 +209,30 @@ fetch(API_URL)
         temoTitle1.textContent = 'Ils parlent';
         temoTitle2.textContent = 'Ce que nos clients pensent vraiment';
 
-        temoignagesContainer.appendChild(temoTitle1);
-        temoignagesContainer.appendChild(temoTitle2);
-
+        
         data.temoignages.forEach(temo => {
             let temoDiv = document.createElement('div');
             let noteP = document.createElement('p');
             let typeP = document.createElement('p');
             let commentP = document.createElement('p');
             let prenomP = document.createElement('p');
-            temoDiv.className = 'avantage-container';
+            temoDiv.className = 'temo-container';
 
             noteP.textContent = `Note :${temo.note}/5`;
             commentP.textContent = temo.commentaire;
             prenomP.textContent = temo.prenom;
             typeP.textContent = temo.typeExperience;
-
+            
             temoDiv.appendChild(noteP);
             temoDiv.appendChild(commentP);
             temoDiv.appendChild(prenomP);
             temoDiv.appendChild(typeP);
             temoignagesContainer.appendChild(temoDiv);
         });
-
+        
         temoignages.innerHTML = '';
+        
+        temoignages.appendChild(temoTitle1);
+        temoignages.appendChild(temoTitle2);
         temoignages.appendChild(temoignagesContainer);
     });
